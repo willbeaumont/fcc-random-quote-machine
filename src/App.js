@@ -107,12 +107,14 @@ function ButtonGroup (props) {
           buttonIcon= {<FaTwitter />}
           aElement={true}
           href={GenerateTweet(props.quote, props.author)}
+          id="tweet-quote"
         />
         <Button
           background={props.background}
           buttonIcon= {<FaTumblr />}
           aElement={true}
           href={GenerateTumblr(props.quote, props.author)}
+          id="tumblr-quote"
         />
       </div>
       <div id="actionBox">
@@ -154,7 +156,7 @@ function Button (props) {
     return (
         <button style={buttonStyle}>
           <a
-            id="tweet-quote"
+            id={props.id}
             href={props.href}
             target="_blank"
             rel="noreferrer"
@@ -167,6 +169,7 @@ function Button (props) {
   } else {
     return (
         <button
+          id={props.id}
           style={buttonStyle}
           onClick={props.getQuote}
         >
